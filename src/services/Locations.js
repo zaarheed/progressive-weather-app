@@ -14,9 +14,10 @@ class Locations {
 
     initList() {
         return [
-            { name: "London", value: "london", coords: {latitude: 20.8634298, longitude: -74.5072566} },
-            { name: "Dubai", value: "dubai", coords: {latitude: 37.8634298, longitude: -1.5072566} },
-            { name: "Kuala Lumpur", value: "kuala-lumpur", coords: {latitude: 40.8634298, longitude: -74.5072566} }
+            { name: "Dubai", coords: { latitude: 25.2048, longitude: 55.2708 }},
+            { name: "Kuala Lumpur", coords: { latitude: 3.1390, longitude: 101.6869 }},
+            { name: "London", coords: { latitude: 51.5074, longitude: -0.1278 }},
+            { name: "Parsippany", coords: { latitude: 40.8653, longitude: -74.4174 }}
         ]
     }
 

@@ -1,5 +1,9 @@
 <template>
     <main>
+        <LocationSelector
+            :location.sync="location"
+        ></LocationSelector>
+
         <Measurements
             :cloudiness="this.forecast.cloudiness"
             :windSpeed="this.forecast.windSpeed"
@@ -23,6 +27,7 @@
 <script>
 import Weather from './Weather'
 import Temperature from './Temperature'
+import LocationSelector from './LocationSelector'
 import Measurements from './Measurements'
 import WeatherForecast from '../services/WeatherForecast'
 
@@ -32,12 +37,14 @@ export default {
     components: {
         Weather,
         Temperature,
-        Measurements
+        Measurements,
+        LocationSelector
     },
 
     data() {
         return {
-            forecast: new WeatherForecast
+            forecast: new WeatherForecast,
+            location: null
         }
     }
 }

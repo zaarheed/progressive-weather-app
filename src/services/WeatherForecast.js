@@ -7,7 +7,7 @@ class WeatherForecast {
     /*
     * Create WeatherForecast instance.
     */
-    constructor() {
+    constructor(position) {
         this.cloudiness = 0;
         this.windSpeed = 0;
         this.humidity = 0;
@@ -20,7 +20,13 @@ class WeatherForecast {
         this.description = 'Please connect to internet to fetch latest forecast :)';
         this.weatherIcon = require('../assets/icons/weather/cloud.svg');
 
-        this.update();
+        if (!position) {
+            this.update();
+        }
+        else {
+            this.updateForecast(position);
+        }
+        
     }
 
     /*

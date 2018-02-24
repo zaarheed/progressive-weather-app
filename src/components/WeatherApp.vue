@@ -43,8 +43,15 @@ export default {
 
     data() {
         return {
-            forecast: new WeatherForecast,
-            location: null
+            forecast: new WeatherForecast(null),
+            location: {}
+        }
+    },
+
+    watch: {
+        location: function () {
+            console.log("location in WeatherApp updated", this.location);
+            this.forecast = new WeatherForecast(this.location);
         }
     }
 }

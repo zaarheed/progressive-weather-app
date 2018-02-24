@@ -1,30 +1,41 @@
 <template>
     <section>
-        <select>
+        <select v-model="selectedLocation">
             <option value="" selected>Current Location</option>
-            <option v-for="location in locations" :key="location.value" :value="location.value">{{location.name}}</option>
+            <option v-for="location in locations" :key="location.value" :value="location">{{location.name}}</option>
         </select>
     </section>
 </template>
 
 <script>
+import Locations from '../services/Locations'
+
 export default {
     name: 'LocationSelector',
 
     props: {
         location: {
-            type: String,
+            type: Object,
             required: true
         }
     },
 
     data() {
         return {
-            locations: [
-                { name: "London", value: "london" },
-                { name: "Dubai", value: "dubai" },
-                { name: "Kuala Lumpur", value: "kuala-lumpur" }
-            ]
+            // locations: [
+            //     { name: "London", value: "london" },
+            //     { name: "Dubai", value: "dubai" },
+            //     { name: "Kuala Lumpur", value: "kuala-lumpur", coords: {latitude: 40.8634298, longitude: -74.5072566} }
+            // ],
+            locations: new Locations,
+            selectedLocation: ""
+        }
+    },
+
+    watch: {
+        selectedLocation: function () {
+            console.log("selectedLocation changed", this.selectedLocation);
+            this.$emit("update:location", this.selectedLocation);
         }
     }
         

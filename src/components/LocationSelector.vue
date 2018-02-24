@@ -22,11 +22,6 @@ export default {
 
     data() {
         return {
-            // locations: [
-            //     { name: "London", value: "london" },
-            //     { name: "Dubai", value: "dubai" },
-            //     { name: "Kuala Lumpur", value: "kuala-lumpur", coords: {latitude: 40.8634298, longitude: -74.5072566} }
-            // ],
             locations: new Locations,
             selectedLocation: ""
         }
@@ -34,7 +29,6 @@ export default {
 
     watch: {
         selectedLocation: function () {
-            console.log("selectedLocation changed", this.selectedLocation);
             this.$emit("update:location", this.selectedLocation);
         }
     }

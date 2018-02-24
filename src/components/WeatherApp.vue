@@ -50,7 +50,6 @@ export default {
 
     watch: {
         location: function () {
-            console.log("location in WeatherApp updated", this.location);
             this.forecast = new WeatherForecast(this.location);
         }
     }

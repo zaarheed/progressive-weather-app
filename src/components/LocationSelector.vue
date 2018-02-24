@@ -2,7 +2,7 @@
     <section>
         <select>
             <option value="" selected>Current Location</option>
-            <option v-for="location in locations" :key="location.value" :value="location.value" selected>{{location.name}}</option>
+            <option v-for="location in locations" :key="location.value" :value="location.value">{{location.name}}</option>
         </select>
     </section>
 </template>

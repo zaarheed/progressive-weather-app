@@ -1,3 +1,6 @@
+var geolocation = require("nativescript-geolocation");
+
+
 /*
 * Service that fetch and parse weather forecast from openweathermap.org.
 *
@@ -33,8 +36,9 @@ class WeatherForecast {
     * Update forecast with fresh data from current location.
     */
     update() {
-        if (navigator.onLine) {
-            navigator.geolocation.getCurrentPosition(position => this.updateForecast(position));
+        if (geolocation) {
+            geolocation.getCurrentLocation()
+            .then(position => this.updateForecast(position));
         }
     }
 

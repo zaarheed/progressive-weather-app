@@ -1,10 +1,11 @@
 <template>
-    <section>
-        <select v-model="selectedLocation">
+    <StackLayout>
+        <!-- <ListPicker :items="locations" v-model="selectedLocation" /> -->
+        <!-- <select v-model="selectedLocation">
             <option value="" selected>Current Location</option>
             <option v-for="location in locations" :key="location.value" :value="location">{{location.name}}</option>
-        </select>
-    </section>
+        </select> -->
+    </StackLayout>
 </template>
 
 <script>
@@ -22,8 +23,8 @@ export default {
 
     data() {
         return {
-            locations: new Locations,
-            selectedLocation: ""
+            locations: new Locations(),
+            selectedLocation: (new Locations())[0]
         }
     },
 

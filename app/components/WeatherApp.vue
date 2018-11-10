@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <StackLayout>
         <LocationSelector
             :location.sync="location"
         ></LocationSelector>
@@ -10,18 +10,18 @@
             :humidity="this.forecast.humidity"
         ></Measurements>
 
-        <Temperature
+        <!-- <Temperature
             :value="this.forecast.temperatureValue"
             :high="this.forecast.temperatureHigh"
             :low="this.forecast.temperatureLow"
-        ></Temperature>
+        ></Temperature> -->
 
-        <Weather
+        <!-- <Weather
             :location="this.forecast.location"
             :description="this.forecast.description"
             :icon="this.forecast.weatherIcon"
-        ></Weather>
-    </main>
+        ></Weather> -->
+    </StackLayout>
 </template>
 
 <script>

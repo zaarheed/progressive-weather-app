@@ -1,15 +1,14 @@
 <template>
-    <section>
-        <div class="cloudiness">
-            <img src="../assets/icons/cloud.svg" alt="cloudiness" /><span class="cloudiness__value">{{ cloudiness }}</span>&percnt;
-        </div>
-        <div class="wind-speed">
-            <img src="../assets/icons/wind.svg" alt="wind speed" /><span class="wind__value">{{ windSpeed }}</span>m/s
-        </div>
-        <div class="humidity">
-            <img src="../assets/icons/humidity.svg" alt="humidity" /><span class="humidity__value">{{ humidity }}</span>&percnt;
-        </div>
-    </section>
+    <GridLayout columns="*" rows="*" width="100%" height="100">
+        <Image src="~/assets/icons/cloud.png" alt="cloudiness" height="48" width="48" row="0" col="1" />
+        <Label :text="cloudiness" class="cloudiness__value" row="0" col="2" />
+
+        <Image src="../assets/icons/wind.png" alt="wind speed" height="48" width="48" row="0" col="3" />
+        <Label :text="windSpeed" class="wind__value" row="0" col="0" />
+
+        <Image src="../assets/icons/humidity.png" alt="humidity" height="48" width="48" row="0" col="4" />
+        <Label :text="humidity" class="humidity__value" row="0" col="5" />
+    </GridLayout>
 </template>
 
 <script>
@@ -34,30 +33,4 @@ export default {
 </script>
 
 <style scoped>
-section {
-    width: 100%;
-    padding-top: 25px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.cloudiness img {
-    width: 48px;
-    height: 48px;
-    vertical-align: middle;
-}
-
-.wind-speed img {
-    width: 48px;
-    height: 48px;
-    vertical-align: middle;
-}
-
-.humidity img {
-    width: 48px;
-    height: 48px;
-    vertical-align: middle;
-}
 </style>
